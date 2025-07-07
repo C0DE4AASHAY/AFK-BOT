@@ -1,0 +1,47 @@
+{
+  "bot-account": {
+    "username": "BlazeSmp",
+    "password": "",
+    "type": "mojang"
+  },
+  "server": {
+    "ip": "blazesmp1219.aternos.me",
+    "port": 33303,
+    "version": "1.12.1"
+  },
+  "position": {
+    "enabled": false,
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "utils": {
+    "auto-auth": {
+      "enabled": true,
+      "password": "Aryan@1219"
+    },
+    "anti-afk": {
+      "enabled": true,
+      "sneak": true
+    },
+    "chat-messages": {
+      "enabled": true,
+      "repeat": true,
+      "repeat-delay": 300,
+      "messages": [
+        "hi guys",
+        "Hope you are enjoying!",
+        "Please vote BlazeSmp using /vote"
+      ]
+    },
+    "chat-log": true,
+    "auto-reconnect": true,
+    "auto-reconnect-delay": 5000,
+    "movement": {
+      "circle-walk": {
+        "enabled": true,
+        "radius": 3
+      }
+    }
+  }
+}
