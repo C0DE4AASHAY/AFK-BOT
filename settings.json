@@ -1,63 +1,48 @@
 {
   "bot-account": {
-    "username": "BlazeSmp",
+    "username": "BlazeSmp", 
     "password": "",
-    "type": "offline"
+    "type": "mojang"
   },
+
   "server": {
-    "ip": "blazesmp1219.aternos.me",
-    "port": 33303,
-    "version": "1.12.1"
+    "ip": "blazesmp1219.aternos.me", 
+    "port": 33303,   
+    "version": "1.12.1"   
   },
+  
   "position": {
-    "enabled": false,
+    "enabled": true,
     "x": 0,
     "y": 0,
     "z": 0
   },
+
   "utils": {
     "auto-auth": {
       "enabled": true,
       "password": "Aryan@1219"
     },
-    "auto-eat": {
-      "enabled": true,
-      "food-items": [
-        "bread",
-        "cooked_beef",
-        "cooked_chicken",
-        "cooked_mutton",
-        "cooked_porkchop",
-        "cooked_rabbit",
-        "cooked_salmon",
-        "golden_apple",
-        "mushroom_stew",
-        "porkchop"
-      ],
-      "health-threshold": 16
-    },
+
     "anti-afk": {
       "enabled": true,
-      "sneak": true
+      "sneak": false
     },
+
     "chat-messages": {
       "enabled": true,
-      "repeat": true,
-      "repeat-delay": 300,
+      "repeat": false,
+      "repeat-delay": 700,
+
       "messages": [
-        "hi guys",
+        "hi",
         "Hope you are enjoying!",
         "Please vote BlazeSmp using /vote"
       ]
     },
+
     "chat-log": true,
     "auto-reconnect": true,
-    "auto-reconnect-delay": 5000,
-    "movement": {
-      "circle-walk": {
-        "enabled": true,
-        "radius": 3
-      }
-    }
+    "auto-recconect-delay": 5000
   }
 }
