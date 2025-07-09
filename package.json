@@ -3,6 +3,7 @@
     "express": "^5.1.0",
     "minecraft-data": "^3.93.0",
     "mineflayer": "^4.30.0",
+    "mineflayer-auto-eat": "^5.0.2",
     "mineflayer-pathfinder": "^2.4.5"
   }
 }

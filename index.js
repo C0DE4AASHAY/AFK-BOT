@@ -5,6 +5,9 @@ const mcDataLoader = require('minecraft-data');
 const express = require('express');
 const config = require('./settings.json');
 
+// ✅ Auto-eat plugin
+const autoeat = require('mineflayer-auto-eat');
+
 const app = express();
 
 app.get('/', (req, res) => {
@@ -26,6 +29,7 @@ function createBot() {
   });
 
   bot.loadPlugin(pathfinder);
+  bot.loadPlugin(autoeat); // ✅ Load auto-eat plugin
 
   bot.once('spawn', async () => {
     console.log('\x1b[33m[AfkBot] Bot joined the server\x1b[0m');
@@ -33,6 +37,17 @@ function createBot() {
     const mcData = mcDataLoader(bot.version);
     const defaultMove = new Movements(bot, mcData);
     bot.settings.colorsEnabled = false;
+
+    // ✅ Auto-eat setup
+    if (config.utils['auto-eat']?.enabled) {
+      console.log('[INFO] Auto-eat module enabled');
+      bot.autoEat.options = {
+        priority: 'foodPoints',
+        startAt: config.utils['auto-eat']['health-threshold'],
+        bannedFood: [],
+        whitelist: config.utils['auto-eat']['food-items']
+      };
+    }
 
     // Auto Login
     if (config.utils['auto-auth'].enabled) {
@@ -129,9 +144,10 @@ function createBot() {
       bot.chat(`/login ${password}`);
       console.log(`[Auth] Sent /login ${password}`);
 
+      // Wait for chat message (could be server or plugin-dependent)
       bot.once('chat', (username, message) => {
         console.log(`[ChatLog] <${username}> ${message}`);
-        if (message.includes('successfully logged in')) {
+        if (message.toLowerCase().includes('successfully')) {
           console.log('[INFO] Login successful.');
           resolve();
         } else {

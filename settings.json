@@ -2,7 +2,7 @@
   "bot-account": {
     "username": "BlazeSmp",
     "password": "",
-    "type": "mojang"
+    "type": "offline"
   },
   "server": {
     "ip": "blazesmp1219.aternos.me",
@@ -19,6 +19,22 @@
     "auto-auth": {
       "enabled": true,
       "password": "Aryan@1219"
+    },
+    "auto-eat": {
+      "enabled": true,
+      "food-items": [
+        "bread",
+        "cooked_beef",
+        "cooked_chicken",
+        "cooked_mutton",
+        "cooked_porkchop",
+        "cooked_rabbit",
+        "cooked_salmon",
+        "golden_apple",
+        "mushroom_stew",
+        "porkchop"
+      ],
+      "health-threshold": 16
     },
     "anti-afk": {
       "enabled": true,
